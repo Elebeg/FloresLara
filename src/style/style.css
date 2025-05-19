@@ -1565,3 +1565,192 @@ body {
     -webkit-animation-play-state: paused !important;
     animation-play-state: paused !important;
 }
+
+@media screen and (max-width: 768px) {
+    /* Ajustes para o container principal */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* Ajustes para as flores */
+    .flowers {
+        transform: scale(0.7);
+        transform-origin: center bottom;
+    }
+    
+    /* Ajustes para a mensagem */
+    .message-container {
+        width: 90%;
+        max-width: 90%;
+        padding: 15px;
+        font-size: 90%;
+    }
+    
+    .message-title {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .message-content {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    /* Ajustes para os corações flutuantes */
+    .floating-hearts {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    /* Ajustes para os corações com iniciais */
+    .fecha-coracao {
+        font-size: 28px;
+    }
+}
+
+/* Ajustes específicos para telas muito pequenas */
+@media screen and (max-width: 480px) {
+    /* Reduzir ainda mais as flores */
+    .flowers {
+        transform: scale(0.5);
+    }
+    
+    /* Ajustar a mensagem */
+    .message-container {
+        padding: 12px;
+    }
+    
+    .message-title {
+        font-size: 20px;
+    }
+    
+    .message-content {
+        font-size: 14px;
+    }
+    
+    /* Reposicionar os corações com iniciais */
+    .fecha-coracao {
+        font-size: 24px;
+    }
+    
+    .fecha-coracao:nth-child(1) {
+        top: 10%;
+        left: 15%;
+    }
+    
+    .fecha-coracao:nth-child(2) {
+        top: 80%;
+        left: 75%;
+    }
+    
+    /* Adicionar mais espaço para a animação respirar */
+    .night {
+        height: 120vh;
+    }
+}
+
+/* Orientação paisagem em dispositivos móveis */
+@media screen and (max-width: 896px) and (orientation: landscape) {
+    .flowers {
+        transform: scale(0.5);
+        transform-origin: center bottom;
+    }
+    
+    .message-container {
+        top: 55%;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    /* Esconder alguns elementos menos importantes em orientação paisagem */
+    .floating-hearts {
+        opacity: 0.5;
+    }
+}
+
+/* Ajustes para a visualização da noite/fundo */
+@media screen and (max-width: 768px) {
+    .night {
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+/* Melhorias de desempenho para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    /* Reduzir a complexidade de algumas animações em dispositivos móveis */
+    .floating-heart {
+        animation: float 8s linear infinite;
+    }
+    
+    /* Ajustar número de corações em dispositivos móveis */
+    @keyframes float {
+        0% {
+            opacity: 0;
+            transform: translateY(100%) translateX(0) rotate(0deg);
+        }
+        15% {
+            opacity: 0.8;
+        }
+        85% {
+            opacity: 0.8;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-100vh) translateX(40px) rotate(180deg);
+        }
+    }
+}
+
+/* Melhorias na leitura de texto */
+@media screen and (max-width: 768px) {
+    .message-container {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .date-counter {
+        font-size: 14px;
+    }
+}
+
+/* Ajustes para dispositivos com tela muito alta (como iPhone X e mais recentes) */
+@media screen and (min-height: 800px) and (max-width: 480px) {
+    .flowers {
+        transform: scale(0.6);
+        bottom: 0;
+    }
+    
+    .message-container {
+        top: 45%;
+    }
+}
+
+/* Ajustes de acessibilidade */
+@media screen and (max-width: 768px) {
+    .message-content, .message-title, .date-counter {
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    }
+    
+    .heart {
+        display: inline-block;
+    }
+}
+
+/* Garantir que a animação seja visível sem scroll */
+@media screen and (max-height: 600px) {
+    .flowers {
+        transform: scale(0.4);
+        transform-origin: center bottom;
+    }
+}
+
+/* Manter o texto legível */
+@media screen and (max-width: 320px) {
+    .message-title {
+        font-size: 18px;
+    }
+    
+    .message-content {
+        font-size: 13px;
+    }
+}
